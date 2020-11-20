@@ -82,9 +82,9 @@ color: rgb(255, 255, 255);</string>
   <widget class="QLabel" name="dateTime">
    <property name="geometry">
     <rect>
-     <x>210</x>
+     <x>0</x>
      <y>160</y>
-     <width>151</width>
+     <width>591</width>
      <height>31</height>
     </rect>
    </property>
@@ -99,6 +99,9 @@ color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>Wed, 5 Sep 2020</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="sunrise">
@@ -237,56 +240,6 @@ color: rgb(0, 170, 127);</string>
       </property>
       <property name="text">
        <string>Find</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>480</y>
-     <width>521</width>
-     <height>47</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_3">
-    <item>
-     <widget class="QLabel" name="minTempValue">
-      <property name="font">
-       <font>
-        <family>Yu Gothic UI</family>
-        <pointsize>20</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(170, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>10°C</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="maxTempValue">
-      <property name="font">
-       <font>
-        <family>Yu Gothic UI</family>
-        <pointsize>20</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(170, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>25°C</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
@@ -588,9 +541,9 @@ color: rgb(0, 170, 127);</string>
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>100</y>
+     <y>80</y>
      <width>591</width>
-     <height>61</height>
+     <height>83</height>
     </rect>
    </property>
    <property name="font">
@@ -792,10 +745,10 @@ color: rgb(0, 170, 127);</string>
   <widget class="QLabel" name="feelsLikeTemp">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>240</y>
+     <x>80</x>
+     <y>494</y>
      <width>41</width>
-     <height>45</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
@@ -814,11 +767,130 @@ color: rgb(0, 170, 127);</string>
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="celciusFeelLike">
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>250</y>
+     <x>120</x>
+     <y>490</y>
+     <width>21</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Yu Gothic UI</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(170, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="maxTempValue">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>490</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Yu Gothic UI</family>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(170, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>25</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="celciusMaxTemp">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>490</y>
+     <width>21</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Yu Gothic UI</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(170, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>°C</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="minTempValue">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>490</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Yu Gothic UI</family>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(170, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>10</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>310</y>
+     <width>31</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Yu Gothic</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="celciusMinTemp">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>490</y>
      <width>21</width>
      <height>16</height>
     </rect>
