@@ -303,7 +303,7 @@ color: rgb(0, 170, 127);</string>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
-     <widget class="QLabel" name="feelsLike">
+     <widget class="QLabel" name="feelsLikeTemp">
       <property name="font">
        <font>
         <family>Yu Gothic UI</family>

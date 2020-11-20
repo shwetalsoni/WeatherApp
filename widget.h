@@ -24,5 +24,7 @@ private:
     Ui::Widget *ui;
     QNetworkAccessManager *manager;
     QNetworkRequest request;
+
+    void displayWeatherData(QString jsonString);
 };
 #endif // WIDGET_H
