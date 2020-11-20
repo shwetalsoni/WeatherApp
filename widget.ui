@@ -693,7 +693,7 @@ color: rgb(0, 170, 127);</string>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_12">
     <item>
-     <widget class="QLabel" name="windDirValue">
+     <widget class="QLabel" name="windDir">
       <property name="font">
        <font>
         <family>Yu Gothic UI</family>
@@ -709,7 +709,7 @@ color: rgb(0, 170, 127);</string>
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="windDirValue_2">
+     <widget class="QLabel" name="windDirValue">
       <property name="font">
        <font>
         <family>Yu Gothic UI</family>
