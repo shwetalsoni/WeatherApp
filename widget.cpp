@@ -68,6 +68,7 @@ void Widget::displayWeatherData(QString jsonString){
 
     QString city = data["name"].toString();
     QString countryCode = dataSys["country"].toString();
+    QString location = city.append(", ").append(countryCode);
 
     QString weatherCondition = dataWeather["main"].toString();
     int weatherId = dataWeather["id"].toInt();
@@ -101,17 +102,40 @@ void Widget::displayWeatherData(QString jsonString){
 
     ui->query->setText(city);
 
-    ui->location->setText(city);
-    ui->countryCode->setText(countryCode);
+    ui->location->setText(location);
     ui->weatherlabel->setText(weatherCondition);
     ui->temperature->setText(QString::number(temp));
     ui->feelsLikeTempValue->setText(QString::number(feelsLike));
     ui->maxTempValue->setText(QString::number(tempMax));
     ui->minTempValue->setText(QString::number(tempMin));
-    ui->pressurevalue->setText(QString::number(pressure));
-    ui->humidityValue->setText(QString::number(humidity));
-    ui->visibilityValue->setText(QString::number(visibility));
-    ui->windSpeedValue->setText(QString::number(windSpeed));
-    ui->windDirValue->setText(QString::number(windDirDegree));
+    ui->pressurevalue->setText(QString::number(pressure).append(" hPa"));
+    ui->humidityValue->setText(QString::number(humidity).append("%"));
+    ui->visibilityValue->setText(QString::number(visibility).append(" m"));
+    ui->windSpeedValue->setText(QString::number(windSpeed).append(" m/s"));
+    ui->windDirValue->setText(direction(windDirDegree));
 
+}
+
+QString Widget::direction(int deg){
+    QString direction;
+    deg += 23;
+    deg %= 360;
+    if(deg <= 45){
+        direction = "North";
+    }else if(deg < 90){
+        direction = "North-East";
+    }else if(deg <= 135){
+        direction = "West";
+    }else if(deg < 180){
+        direction = "South-West";
+    }else if(deg <= 225){
+        direction = "South";
+    }else if(deg < 270){
+        direction = "South-West";
+    }else if(deg < 315){
+        direction = "West";
+    }else{
+        direction = "North-West";
+    }
+    return direction;
 }

@@ -26,5 +26,6 @@ private:
     QNetworkRequest request;
 
     void displayWeatherData(QString jsonString);
+    QString direction(int deg);
 };
 #endif // WIDGET_H

@@ -10,6 +10,12 @@
     <height>751</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>588</width>
+    <height>751</height>
+   </size>
+  </property>
   <property name="maximumSize">
    <size>
     <width>588</width>
@@ -48,11 +54,13 @@ background-color: rgb(0, 170, 127);</string>
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(0, 170, 0);
-color: rgb(255, 255, 255);</string>
+    <string notr="true">color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>23</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="weatherlabel">
@@ -785,11 +793,14 @@ color: rgb(0, 170, 127);</string>
      <bold>true</bold>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(255,255,255);</string>
+   </property>
    <property name="text">
     <string>°C</string>
    </property>
   </widget>
-  <widget class="QLabel" name="feelsLikeTemp">
+  <widget class="QLabel" name="feelsLikeTempValue">
    <property name="geometry">
     <rect>
      <x>340</x>
