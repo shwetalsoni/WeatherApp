@@ -27,5 +27,6 @@ private:
 
     void displayWeatherData(QString jsonString);
     QString direction(int deg);
+    void clearDisplay();
 };
 #endif // WIDGET_H

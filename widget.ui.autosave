@@ -673,7 +673,7 @@ color: rgb(0, 170, 127);</string>
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>0 km/h</string>
+       <string>0 m/s</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

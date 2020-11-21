@@ -17,13 +17,15 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
-
+    clearDisplay();
 
     manager = new QNetworkAccessManager();
     QObject::connect(manager, &QNetworkAccessManager::finished,
         this, [=](QNetworkReply *reply) {
             if (reply->error()) {
                 qDebug() << reply->errorString();
+                clearDisplay();
+                ui->location->setText("Not Found");
                 return;
             }
 
@@ -95,14 +97,14 @@ void Widget::displayWeatherData(QString jsonString){
     QDateTime sunsetDateTime;
     sunsetDateTime.setTime_t(sunsetTimestamp);
 
-    qDebug() << sunriseDateTime.toString(Qt::SystemLocaleDate);
-    qDebug() << sunsetDateTime.toString(Qt::SystemLocaleShortDate);
-
-    qDebug() << sunriseDateTime.toString(Qt::SystemLocaleLongDate);
+    QDate date = sunriseDateTime.date();
+    QTime sunriseTime = sunriseDateTime.time();
+    QTime sunsetTime = sunsetDateTime.time();
 
     ui->query->setText(city);
 
     ui->location->setText(location);
+    ui->date->setText(date.toString());
     ui->weatherlabel->setText(weatherCondition);
     ui->temperature->setText(QString::number(temp));
     ui->feelsLikeTempValue->setText(QString::number(feelsLike));
@@ -113,7 +115,8 @@ void Widget::displayWeatherData(QString jsonString){
     ui->visibilityValue->setText(QString::number(visibility).append(" m"));
     ui->windSpeedValue->setText(QString::number(windSpeed).append(" m/s"));
     ui->windDirValue->setText(direction(windDirDegree));
-
+    ui->sunriseValue->setText(sunriseTime.toString().remove(5, 3));
+    ui->sunsetValue->setText(sunsetTime.toString().remove(5, 3));
 }
 
 QString Widget::direction(int deg){
@@ -138,4 +141,21 @@ QString Widget::direction(int deg){
         direction = "North-West";
     }
     return direction;
+}
+
+void Widget::clearDisplay(){
+    ui->location->setText("WeatherApp");
+    ui->date->setText("");
+    ui->weatherlabel->setText("Partly sunny");
+    ui->temperature->setText(QString::number(0));
+    ui->feelsLikeTempValue->setText(QString::number(0));
+    ui->maxTempValue->setText(QString::number(0));
+    ui->minTempValue->setText(QString::number(0));
+    ui->pressurevalue->setText("");
+    ui->humidityValue->setText("");
+    ui->visibilityValue->setText("");
+    ui->windSpeedValue->setText(QString::number(0).append(" m/s"));
+    ui->windDirValue->setText(direction(0));
+    ui->sunriseValue->setText("00:00");
+    ui->sunsetValue->setText("00:00");
 }
