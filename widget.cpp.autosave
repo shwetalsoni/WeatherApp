@@ -71,7 +71,6 @@ void Widget::displayWeatherData(QString jsonString){
     QString location = city.append(", ").append(countryCode);
 
     QString weatherCondition = dataWeather["main"].toString();
-    int weatherId = dataWeather["id"].toInt();
 
     int temp = dataMain["temp"].toDouble();
     int feelsLike = dataMain["feels_like"].toDouble();
@@ -88,7 +87,6 @@ void Widget::displayWeatherData(QString jsonString){
 
     int sunriseTimestamp = dataSys["sunrise"].toInt();
     int sunsetTimestamp = dataSys["sunset"].toInt();
-    int timezone = data["timezone"].toInt();
 
     QDateTime sunriseDateTime;
     sunriseDateTime.setTime_t(sunriseTimestamp);
