@@ -36,9 +36,9 @@ background-color: rgb(0, 170, 127);</string>
   <widget class="QLabel" name="temperature">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>220</x>
      <y>200</y>
-     <width>51</width>
+     <width>101</width>
      <height>71</height>
     </rect>
    </property>
