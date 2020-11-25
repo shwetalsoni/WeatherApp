@@ -1,4 +1,6 @@
 # WeatherApp
+![Screenshot (56)](https://user-images.githubusercontent.com/57187745/100237544-14a4c380-2f55-11eb-8101-be42db1d4372.png)
+
  Made using OpenWeatherMap api. Enter you location to get the following weather details -
 <ul>
   <li>Temperature
